@@ -1,0 +1,18 @@
+{
+  // Cloudflare Workers static-assets deployment, mirroring the `clean` project (ADR-006 pattern).
+  // No server-side code path exists — this serves public/ only. Prepared, NOT deployed.
+  "name": "me-itisyou",
+  "compatibility_date": "2026-08-26",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "routes": [
+    {
+      "pattern": "me.itisyou.app",
+      "custom_domain": true
+    }
+  ],
+  "workers_dev": false
+}
